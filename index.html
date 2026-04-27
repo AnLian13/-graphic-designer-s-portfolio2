@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моё портфолио</title>
+    <link rel="stylesheet" href="sweetalert2.min.css">
+</head>
+<style>
+
+    body{
+    line-height: 1.5;
+    font-family: sans-serif;
+}
+*{
+    margin:0;
+    box-sizing: border-box;
+}    
+
+
+h1 {
+  color: #ffffff;
+  padding: 0, 5px;
+  text-align: center;
+}
+
+h2 {
+  color: #ffffff;
+  text-align: center;
+}
+
+h6 {
+  color: #ffffff;
+  text-align: center;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+img{
+    max-width: 100%;
+    vertical-align: middle;
+}
+.gallery{
+   width: 100%;
+   display: block;
+   min-height: 100vh;
+   background-color: #2a2932;
+   padding: 100px 0;
+}
+
+.container{
+    max-width: 1170px;
+    margin:auto;
+}
+
+.gallery .gallery-filter{
+  
+   width: 100%;
+   text-align: center;
+   margin-bottom: 40px;
+}
+.gallery .gallery-filter .filter-item{
+   color: #ffffff;
+   font-size: 17px;
+   border: 2px solid white;
+   text-transform: uppercase;
+   display: inline-block;
+   border-radius: 20px;
+   margin-right: 8px;
+   cursor: pointer;
+   padding: 8px 20px 8px 20px;
+   line-height: 1.2;
+   transition: all 0.3s ease;
+   margin: 16px;
+}
+
+.gallery-item.name.calendar {
+      color: #ffffff;
+   font-size: 17px;
+   border: 2px solid white;
+   text-transform: uppercase;
+   display: inline-block;
+   border-radius: 20px;
+   margin-right: 8px;
+   cursor: pointer;
+   padding: 8px 20px 8px 20px;
+   line-height: 1.2;
+   transition: all 0.3s ease;
+   margin: 16px;
+}
+
+
+
+.gallery .gallery-filter .filter-item.active{
+  color: white;
+  border-color : #16b5ef;
+  background: #16b5ef;
+}
+
+.gallery .gallery-item{
+    width: calc(100% / 3);
+    padding: 15px;
+
+}
+
+
+.gallery-item.coloda.show {
+    width: calc(100% / 2);
+    padding: 15px;
+}
+
+.gallery-item.cards.show {
+    width: calc(100% / 2);
+    padding: 15px;
+}
+
+.gallery-item.stickers.show {
+    width: calc(100% / 4);
+    padding: 15px;
+}
+
+.gallery-item.gor {
+   width: calc(100% / 2);
+    padding: 15px;
+}
+
+.gallery-item.gorr {
+    width: 100%;
+    padding: 15px;
+}
+
+.gallery-item.calendar.show {
+    width: calc(100% / 2);
+    padding: 15px;
+}
+
+
+.gallery-item.imgg {
+    width: calc(100% / 2);
+    padding: 15px;
+
+}
+.gallery .gallery-item-inner img{
+    width: 100%;
+  border: 3px solid #d4dad9;
+}
+
+.gallery .gallery-item.show{
+    animation: fadeIn 0.5s ease;
+}
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.gallery .gallery-item.hide{
+    display: none;
+}
+
+@media(max-width: 491px){
+    .gallery .gallery-item{
+        width: 50%;
+    }
+}
+@media(max-width: 667px){
+    .gallery .gallery-item{
+        width: 100%;
+    }
+    .gallery .gallery-filter .filter-item{
+        margin-bottom: 10px;
+    }
+}
+.index {
+margin: 40px;
+text-align: center;
+
+}
+
+hr {
+  border: none;
+  border-top: 3px double #ffffff;
+  color: #ffffff;
+  /* overflow: visible; */
+  text-align: center;
+  height: 5px;
+}
+
+ .board.all {
+       
+        background-color: #4500d1;
+        border: 5px solid slategray;
+        border-radius: 10px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 20px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+</style>
+<body>
+
+  
+    <section class="gallery">
+    <div class="container">
+      <h1 class="index">Портфолио работ Анастасии Алексеевны Лобовой</h1>
+
+
+    <div class="gallery-filter">
+   <span class="filter-item active" data-filter="all">Все работы</span>
+   <span class="filter-item" data-filter="business-cards">Визитки</span>
+   <span class="filter-item" data-filter="infographics">Инфографика</span>
+   <span class="filter-item" data-filter="calendar">Календари</span>
+   <span class="filter-item" data-filter="collage">Коллажи</span>
+   <span class="filter-item" data-filter="cards">Карточки товаров</span>
+   <span class="filter-item" data-filter="coloda">Колода Таро с персонажами из мультсериала "13 карт"</span>
+   <span class="filter-item" data-filter="covers">Обложки</span>
+   <span class="filter-item" data-filter="ads">Объявления</span>
+   <span class="filter-item" data-filter="postcards">Открытки</span>
+   <span class="filter-item" data-filter="posters">Постеры</span>
+   <span class="filter-item" data-filter="print">Принты на одежду и сувениры</span>
+   <span class="filter-item" data-filter="invitations">Приглашения</span>
+   <span class="filter-item" data-filter="redesign">Редизайн</span>
+    <span class="filter-item" data-filter="lesson-schedules">Расписания уроков</span>
+   <span class="filter-item" data-filter="stickers">Стикеры</span>
+   <span class="filter-item" data-filter="delete-phone">Удаление и замена фона</span>
+   <span class="filter-item" data-filter="educational-projects">Учебные проекты</span>
+    
+ </div>
+
+
+<div class="row">
+
+ <!--1st gallery item start -->
+ <!-- <div class="gallery-item shoe">
+   <div class="gallery-item-inner">
+      <img src="Учебные проекты/Логотип.png" alt="shoe">
+   </div>
+ </div> -->
+
+<!--Календари --> 
+<!--2nd gallery item start --> 
+
+ <div class="gallery-item gor calendar">
+  <div class="gallery-item-inner">
+    <img src="Календари/A4 - 1 2025.jpg" alt="headphone">
+    <h2>Календарь в формате А3 на 2025 год с персонажами "13 карт"</h2>
+  </div>
+ </div>
+<div class="gallery-item gor calendar">
+   <div class="gallery-item-inner">
+     <img src="Календари/photo_2026-02-09_16-56-00 2024.jpg" alt="headphone">
+     <h2>Календарь в формате А3 на 2024 год с персонажами "13 карт"</h2>
+   </div>
+ </div>
+
+
+<!--4th gallery item start -->
+ <div class="gallery-item gor calendar">
+  <div class="gallery-item-inner">
+    <img src="Календари/Frame 1 2023.png" alt="headphone">
+    <h2>Календарь в формате А3 на 2023 год с персонажами "13 карт"</h2>
+  </div>
+ </div>
+
+  <div class="gallery-item gor calendar">
+  <div class="gallery-item-inner">
+    <img src="Календари/Frame 3.png" alt="headphone">
+    <h2>Календарь в формате А3 на 2026 год с персонажами "13 карт"</h2>
+  </div>
+ </div>
+   <div class="gallery-item gor calendar">
+  <div class="gallery-item-inner">
+    <img src="Календари/photo_2026-02-15_22-11-54.jpg" alt="headphone">
+    <h2>Календарь в формате А5 на 2025 год с персонажами "13 карт"</h2>
+  </div>
+ </div>
+ <div class="gallery-item gor calendar">
+   <div class="gallery-item-inner">
+     <img src="Календари/A5 - 1.png" alt="headphone">
+     <h2>Календарь в формате А5 на 2026 год с персонажами "13 карт"</h2>
+   </div>
+  </div>
+
+</div>
+<div class="gallery-item gorr all">
+<div class="gallery-item-inner">
+<hr>
+</div>
+</div>
+<!--Инфографика --> 
+<!--3rd gallery item start -->
+
+<div class="row">
+ <div class="gallery-item gor infographics">
+  <div class="gallery-item-inner">
+    <img src="ТЗ-шки/Group 138 инфографика.png" alt="camera">
+    <h1>Инфографика платья</h1>
+  </div>
+ </div>
+
+<!--5th gallery item start -->
+ <div class="gallery-item gor infographics">
+   <div class="gallery-item-inner">
+     <img src="ТЗ-шки/Group 1 реклама кофты.png" alt="camera">
+     <h1>Инфографика кофты</h1>
+   </div>
+ </div>
+</div>
+<div class="gallery-item gorr all">
+<div class="gallery-item-inner">
+<hr>
+</div>
+</div>
+ <!--Колода Таро --> 
+<!--3rd gallery item start -->
+<div class="row">
+ <div class="gallery-item gor coloda">
+  <div class="gallery-item-inner">
+    <img src="Колода 13 карт/Кубки.png" alt="camera">
+    <h1>Колода Таро с персонажами "13 карт"</h1>
+  </div>
+ </div>
+
+<!--5th gallery item start -->
+ <div class="gallery-item gor coloda">
+   <div class="gallery-item-inner">
+     <img src="Колода 13 карт/Старшие арканы и рыцари.png" alt="camera">
+     <h1>Колода Таро с персонажами "13 карт"</h1>
+   </div>
+ </div>
+</div>
+ <div class="gallery-item gorr all">
+<div class="gallery-item-inner">
+<hr>
+</div>
+</div>
+ <!--Редизайн -->
+ <div class="row">
+  <div class="gallery-item gor redesign">
+  <div class="gallery-item-inner">
+    <img src="Учебные проекты/Редизайн.png" alt="camera">
+    <h1>Редизайн лендинга обучающего курса</h1>
+  </div>
+ </div>
+
+<div class="gallery-item gor redesign">
+  <div class="gallery-item-inner">
+    <img src="Редизайн/Редизайн кружки.png" alt="camera">
+    <h1>Редизайн кружки с персонажем по имени Пик из мультсериала "13 Карт"</h1>
+  </div>
+ </div>
+</div>
+ <div class="gallery-item gorr all">
+<div class="gallery-item-inner">
+<hr>
+</div>
+</div>
+
+ <div class="row">
+  <div class="gallery-item gor lesson-schedules">
+  <div class="gallery-item-inner">
+    <img src="Расписания/расписание_того_что_невозможно_расписать.jpg" alt="camera">
+    <h1>Расписание уроков с персонажем по имени Куромаку из мультсериала "13 Карт"</h1>
+  </div>
+ </div>
+
+<div class="gallery-item gor lesson-schedules">
+  <div class="gallery-item-inner">
+    <img src="Расписания/расписание жизненых уроков.jpg" alt="camera">
+    <h1>Расписание уроков с персонажем по имени Пик из мультсериала "13 Карт"</h1>
+  </div>
+ </div>
+
+  <div class="gallery-item gorr all">
+<div class="gallery-item-inner">
+<hr>
+</div>
+</div>
+<!--Карточки товаров --> 
+ <!--6th gallery item end -->
+ <div class="row">
+ <div class="gallery-item cards">
+   <div class="gallery-item-inner">
+     <img src="Карточки товаров/Карточка товара для WB.png" alt="cards">
+     <h1>Карточка товара Лесной мёд</h1>
+   </div>
+ </div>
+
+   <div class="gallery-item cards">
+   <div class="gallery-item-inner">
+     <img src="Карточки товаров/Карточка свечей на любовь вертикальная.png" alt="cards">
+      <h1>Карточка товара Свеча для привлечения любви</h1>
+   </div>
+ </div>
+
+  <div class="gallery-item cards">
+   <div class="gallery-item-inner">
+     <img src="Карточки товаров/Карточка товара.png" alt="cards">
+     <h1>Карточка товара Лесной мёд</h1>
+   </div>
+ </div>
+
+
+ <div class="gallery-item cards">
+   <div class="gallery-item-inner">
+     <img src="Карточки товаров/Карточка свечей на любовь.png" alt="cards">
+     <h1>Карточка товара Свеча для привлечения любви</h1>
+   </div>
+ </div>
+</div>
+<div class="gallery-item gorr all">
+<div class="gallery-item-inner">
+<hr>
+</div>
+</div>
+<!--Приглашения --> 
+<!--7th gallery item end -->
+<div class="row">
+ <div class="gallery-item invitations">
+   <div class="gallery-item-inner">
+     <img src="Приглашения/Group 44.png" alt="camera">
+     <h1>Приглашение на корпоратив</h1>
+   </div>
+ </div>
+ <div class="gallery-item invitations">
+  <div class="gallery-item-inner">
+    <img src="Приглашения/Приглашение в дизайн-студию.png" alt="watch">
+    <h1>Приглашение посетить дизайн-студию</h1>
+  </div>
+ </div>
+<div class="gallery-item invitations">
+  <div class="gallery-item-inner">
+    <img src="Приглашения/Приглашение на день рождения.png" alt="watch">
+    <h1>Приглашение на день рождения</h1>
+  </div>
+ </div>
+ <div class="gallery-item invitations">
+  <div class="gallery-item-inner">
+    <img src="Приглашения/Приглашение на выпускной.png" alt="watch">
+    <h1>Приглашение на выпускной</h1>
+  </div>
+ </div>
+</div>
+ <div class="gallery-item gorr all">
+<div class="gallery-item-inner">
+<hr>
+</div>
+</div>
+             <!--Визитки -->
+             <div class="row">
+  <div class="gallery-item business-cards">
+  <div class="gallery-item-inner">
+    <img src="Визитки/Group 10 (1).png" alt="headphone">
+    <h1>Визитка для привлечения клиентов психологу</h1>
+  </div>
+ </div>
+<div class="gallery-item business-cards">
+   <div class="gallery-item-inner">
+     <img src="Визитки/Решение всех проблем с помощью психотерапии.png" alt="headphone">
+     <h1>Визитка для привлечения клиентов психотерапевту</h1>
+   </div>
+ </div>
+
+
+<!--4th gallery item start -->
+ <div class="gallery-item business-cards">
+  <div class="gallery-item-inner">
+    <img src="Визитки/Оригинальный дизайн.png" alt="headphone">
+    <h1>Визитка для привлечения клиентов дизайнеру</h1>
+  </div>
+ </div>
+
+  <div class="gallery-item business-cards">
+  <div class="gallery-item-inner">
+    <img src="Визитки/Вертикальные/Ваша проблема моё решение вертикальные.png" alt="headphone">
+    <h1>Визитка для привлечения клиентов психологу</h1>
+  </div>
+ </div>
+   <div class="gallery-item business-cards">
+  <div class="gallery-item-inner">
+    <img src="Визитки/Вертикальные/Создание хорошего настроения и успеха для продвижения вертикальные.png" alt="headphone">
+    <h1>Визитка для привлечения клиентов дизайнеру</h1>
+  </div>
+ </div>
+ <div class="gallery-item business-cards">
+   <div class="gallery-item-inner">
+     <img src="Визитки/Вертикальные/Ваши желания и Ваш успех вертикальные.png" alt="headphone">
+     <h1>Визитка для привлечения клиентов дизайнеру</h1>
+   </div>
+ </div>
+
+<!--8th gallery item end -->
+
+ <div class="gallery-item business-cards">
+  <div class="gallery-item-inner">
+    <img src="Визитки/Вертикальные/Создание хорошего настроения визитка с черепахой вертикальные.png" alt="watch">
+    <h1>Визитка для привлечения клиентов создателю классных сайтов</h1>
+  </div>
+ </div>
+</div>
+<div class="gallery-item gorr all">
+<div class="gallery-item-inner">
+<hr>
+</div>
+</div>
+
+ <!--9th gallery item start -->
+ 
+       <!--Открытки -->
+       <div class="row">
+  <div class="gallery-item gor postcards">
+  <div class="gallery-item-inner">
+    <img src="Открытки/Поздравление с днём матери.png" alt="headphone">
+    <h1>Поздравление с днём Матери</h1>
+  </div>
+ </div>
+<div class="gallery-item gor postcards">
+   <div class="gallery-item-inner">
+     <img src="Открытки/С днём психолога.png" alt="headphone">
+     <h1>Поздравление с днём Психолога</h1>
+   </div>
+ </div>
+
+
+<!--4th gallery item start -->
+ <div class="gallery-item gor postcards">
+  <div class="gallery-item-inner">
+    <img src="Открытки/С днём медработника.png" alt="headphone">
+    <h1>Поздравление с днём Медработника</h1>
+  </div>
+ </div>
+
+  <div class="gallery-item gor postcards">
+  <div class="gallery-item-inner">
+    <img src="Открытки/С днём матери.png" alt="headphone">
+    <h1>Поздравление с днём Матери</h1>
+  </div>
+ </div>
+
+   <div class="gallery-item postcards">
+  <div class="gallery-item-inner">
+    <img src="Открытки/За здравие моих родных и близких.png" alt="headphone">
+    <h1>Открытка про то, сколько я готова выпить за здравие моих родных и близких</h1>
+  </div>
+ </div>
+   <div class="gallery-item postcards">
+  <div class="gallery-item-inner">
+    <img src="Открытки/С днём учителя.png" alt="headphone">
+    <h1>Поздравление с днём Учителя</h1>
+  </div>
+ </div>
+
+ <div class="gallery-item postcards">
+  <div class="gallery-item-inner">
+    <img src="ТЗ-шки/Group 8 ЮгСтройИнвест.png" alt="watch">
+    <h1>Поздравление сотрудницы администрации с 8 марта</h1>
+  </div>
+ </div>
+  <div class="gallery-item gor postcards">
+  <div class="gallery-item-inner">
+    <img src="ТЗ-шки/A5 - 1 ЮгСтройИнвест.png" alt="watch">
+     <h1>Поздравление генерельного директора компании "ЮгСтройИнвест" с днём Победы</h1>
+  </div>
+ </div>
+</div>
+ <div class="gallery-item gorr all">
+<div class="gallery-item-inner">
+<hr>
+</div>
+</div>
+  <!--Принты -->
+  <div class="row">
+  <div class="gallery-item print">
+  <div class="gallery-item-inner">
+    <img src="Принты на одежду/Принт на толстовку.png" alt="headphone">
+    <h1>Принт с Фредди Меркьюри на толстовку</h1>
+  </div>
+ </div>
+<div class="gallery-item print">
+   <div class="gallery-item-inner">
+     <img src="Принты на одежду/С котом.png" alt="headphone">
+     <h1>Принт на футболку с котом</h1>
+   </div>
+ </div>
+
+ <div class="gallery-item print">
+  <div class="gallery-item-inner">
+    <img src="Принты на одежду/Принт на ёлочный шарик.png" alt="headphone">
+    <h1>Принт с зимним пейзажем на ёлочный шарик</h1>
+  </div>
+ </div>
+  <div class="gallery-item print">
+  <div class="gallery-item-inner">
+    <img src="Принты на одежду/Фартук с Зонтиком.png" alt="headphone"> 
+    <h1>Принт с персонажем из "13 Карт" по имени Зонтик</h1>
+  </div>
+ </div>
+
+    <div class="gallery-item print">
+  <div class="gallery-item-inner">
+    <img src="Принты на одежду/image 1 магнитик.png" alt="headphone">
+    <h1>Принт с персонажами из мультсериала "13 карт" на магнитик</h1>
+  </div>
+ </div>
+ 
+  <div class="gallery-item print">
+  <div class="gallery-item-inner">
+    <img src="Принты на одежду/Принт на штаны.png" alt="headphone">
+    <h1>Принт с карточными мастями на штанах</h1>
+  </div>
+ </div>
+
+  <div class="gallery-item print">
+  <div class="gallery-item-inner">
+    <img src="Принты на одежду/Принт с океаном на кружку.png" alt="headphone">
+    <h1>Принт с океаном на кружку</h1>
+  </div>
+ </div>
+ 
+ <div class="gallery-item print">
+  <div class="gallery-item-inner">
+    <img src="Принты на одежду/Принт с книгами на кружку.png" alt="watch">
+    <h1>Принт с книгами на кружку</h1>
+  </div>
+ </div>
+  <div class="gallery-item print">
+  <div class="gallery-item-inner">
+    <img src="Принты на одежду/С ромашками.png" alt="watch">
+    <h1>Принт с ромашками на футболку</h1>
+  </div>
+ </div>
+   <div class="gallery-item print">
+  <div class="gallery-item-inner">
+    <img src="Принты на одежду/Принт  на фартук.png" alt="headphone">
+   <h1>Принт с едой на фартук</h1>
+  </div>
+ </div>
+ 
+ <div class="gallery-item print">
+  <div class="gallery-item-inner">
+    <img src="Принты на одежду/С котиками.png" alt="watch">
+    <h1>Принт с котиками</h1>
+  </div>
+ </div>
+  <div class="gallery-item print">
+  <div class="gallery-item-inner">
+    <img src="Принты на одежду/С кроликом.png" alt="watch">
+    <h1>Принт с кроликом на футболку</h1>
+  </div>
+ </div>
+
+  <div class="gallery-item print">
+  <div class="gallery-item-inner">
+    <img src="Принты на одежду/Принт с пандой на футболку.png" alt="watch">
+    <h1>Принт с пандой на футболку</h1>
+  </div>
+ </div>
+  <div class="gallery-item print">
+  <div class="gallery-item-inner">
+    <img src="Принты на одежду/Принт с коалой на футболку.png" alt="watch">
+    <h1>Принт с коалой на футболку</h1>
+  </div>
+ </div>
+</div>
+
+ <div class="gallery-item gorr all">
+<div class="gallery-item-inner">
+<hr>
+</div>
+</div>
+  <!--Коллажи -->
+  <div class="row">
+  <div class="gallery-item collage">
+  <div class="gallery-item-inner">
+    <img src="Коллажи/Дельфинарий и боулинг.png" alt="headphone">
+    <h1>Дельфинарий и боулинг в городе Кисловодск</h1>
+  </div>
+ </div>
+<div class="gallery-item collage">
+   <div class="gallery-item-inner">
+     <img src="Коллажи/Цирк и музей космонавтики.png" alt="headphone">
+     <h1>Цирк и музей космонавтики в городе Кисловодск</h1>
+   </div>
+ </div>
+
+ <div class="gallery-item collage">
+  <div class="gallery-item-inner">
+    <img src="Коллажи/Новопятигорское озеро и Галерея.png" alt="headphone">
+    <h1>Новопятигорское озеро и ТРЦ Галерея в городе Пятигорск</h1>
+  </div>
+ </div>
+  <div class="gallery-item collage">
+  <div class="gallery-item-inner">
+    <img src="Коллажи/Развлекательные заведения в Пятигорске.png" alt="headphone">
+    <h1>Развлекательные локации в городе Пятигорск</h1>
+  </div>
+ </div>
+
+  <div class="gallery-item collage">
+  <div class="gallery-item-inner">
+    <img src="Коллажи/Пятигорск.png" alt="headphone">
+    <h1>Развлекательные локации в городе Пятигорск</h1>
+  </div>
+ </div>
+ 
+ <div class="gallery-item collage">
+  <div class="gallery-item-inner">
+    <img src="Коллажи/Как менялась кофейня Max Coffee.png" alt="watch">
+    <h1>Коллаж с тем, как менялось здание кофейни "Max Coffee" в городе Ессентуки</h1>
+  </div>
+ </div>
+ <div class="gallery-item collage">
+  <div class="gallery-item-inner">
+    <img src="Коллажи/Коллаж с мамой.png" alt="watch">
+    <h1>Коллаж с моей любимой мамочкой</h1>
+  </div>
+ </div>
+
+   <div class="gallery-item collage">
+  <div class="gallery-item-inner">
+    <img src="Коллажи/Шахматы и Вершина.png" alt="headphone">
+     <h1>Коллаж с лучшими локациями города Минеральные Воды</h1>
+  </div>
+ </div>
+ 
+ <div class="gallery-item collage">
+  <div class="gallery-item-inner">
+    <img src="Коллажи/Ессентуки.png" alt="watch">
+    <h1>Город Ессентуки</h1>
+  </div>
+ </div>
+    <div class="gallery-item gor collage">
+  <div class="gallery-item-inner">
+    <img src="Коллажи/Любимые работы в портфолио.png" alt="watch">
+    <h1>Коллаж с самыми лучшими работами в портфолио</h1>
+  </div>
+ </div>
+ <div class="gallery-item gor collage">
+  <div class="gallery-item-inner">
+    <img src="Коллажи/КМВ.png" alt="watch">
+     <h1>Коллаж с лучшими развлекательными заведениями в регионе КМВ</h1>
+  </div>
+ </div>
+</div>
+ <div class="gallery-item gorr all">
+<div class="gallery-item-inner">
+<hr>
+</div>
+</div>
+
+  <!--Обложки -->
+  <div class="row">
+  <div class="gallery-item covers">
+  <div class="gallery-item-inner">
+    <img src="Обложки/Обложка для книги Игры демонов.png" alt="headphone">
+    <h1>Обложка для книги "Игры демонов"</h1>
+  </div>
+ </div>
+<div class="gallery-item covers">
+   <div class="gallery-item-inner">
+     <img src="Обложки/A5 - 2.png" alt="headphone">
+     <h1>Макет обложки для тетради с персонажем из мультсериала "13 карт" по имени Зонтик</h1>
+   </div>
+ </div>
+
+ <div class="gallery-item covers">
+  <div class="gallery-item-inner">
+    <img src="Обложки/A5 - 15.png" alt="headphone">
+    <h1>Макет обложки для тетради с персонажем из мультсериала "13 карт" по имени Вару</h1>
+  </div>
+ </div>
+  <div class="gallery-item covers">
+  <div class="gallery-item-inner">
+    <img src="Обложки/IMG_20240729_151809_407 обложка для ежедневника.jpg" alt="headphone">
+    <h1>Макет обложки для ежедневника с персонажами из мультсериала "13 карт"</h1>
+  </div>
+ </div>
+
+  <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Обложки/IMG_20240221_100818_980 обложка для тетради.jpg" alt="headphone">
+    <h1>Макет обложки для тетради</h1>
+  </div>
+ </div>
+ 
+ <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Обложки/Обложка для группы Вк.png" alt="watch">
+    <h1>Обложка для группы в Вк</h1>
+  </div>
+ </div>
+ <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Обложки/Обложка для телеграм канала.png" alt="watch">
+    <h1>Обложка для Телеграм-канала</h1>
+  </div>
+ </div>
+
+   <div class="gallery-item covers">
+  <div class="gallery-item-inner">
+    <img src="Обложки/Обложка для курса по поиску работы (1).png" alt="headphone">
+     <h1>Обложка для курса по поиску работы</h1>
+  </div>
+ </div>
+ 
+ <div class="gallery-item covers">
+  <div class="gallery-item-inner">
+    <img src="Обложки/Обложка для канала про отзывы.png" alt="watch">
+    <h1>Обложка для Телеграм-канала про отзывы</h1>
+  </div>
+ </div>
+    <div class="gallery-item covers">
+  <div class="gallery-item-inner">
+    <img src="Обложки/Обложка для курса по мемологии.png" alt="watch">
+    <h1>Обложка для курса по мемологии</h1>
+  </div>
+ </div>
+
+    <div class="gallery-item covers">
+  <div class="gallery-item-inner">
+    <img src="Обложки/В гостях у Адимовича.png" alt="watch">
+    <h1>Ссылка на статью, для которой была сделана эта обложка <a href="https://pub.9111.ru/society/23828073-13-kart-i-adimovich-1-chast/">здесь</a></h1>
+  </div>
+ </div>
+ 
+    <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Обложки/Group 19 про цирковое представление.png" alt="watch">
+    <h1>Ссылка на статью, для которой была сделана эта обложка <a href="https://pub.9111.ru/travel/24276233-neobichnoe-predstavlenie-v-kislovodskom-tsirke-na-kotoroe-popali-personazhi-13-kart/">здесь</a></h1>
+  </div>
+ </div>
+  <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Обложки/Успешная защита диплома.png" alt="watch">
+    <h1>Ссылка на статью, для которой была сделана эта обложка <a href="https://pub.9111.ru/education/24257942-tematika-moih-statey-v-blizhayshem-budushchem/">здесь</a></h1>
+  </div>
+ </div>
+ <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Обложки/Сбой в телепортации.png" alt="watch">
+    <h1>Ссылка на статью, для которой была сделана эта обложка <a href="https://pub.9111.ru/travel/24263534-chto-sluchilos-s-personazhami-13-kart-na-pyatom-sezde-praviteley/">здесь</a></h1>
+  </div>
+ </div>
+ <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Обложки/Разговор с королём мечей Пиком.png" alt="watch">
+    <h1>Ссылка на статью, для которой была сделана эта обложка <a href="https://pub.9111.ru/travel/24304869-kto-pozvonil-piku-posle-neobichnogo-predstavleniya-kotoroe-proshlo-v-kislovodskom-tsirke/">здесь</a></h1>
+  </div>
+ </div>
+  <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Обложки/Карточные прячутся среди толпы.png" alt="watch">
+    <h1>Ссылка на статью, для которой была сделана эта обложка <a href="https://pub.9111.ru/travel/24265904-kak-personazhi-13-kart-okazalis-v-kislovodskom-tsirke/">здесь</a></h1>
+  </div>
+ </div>
+ <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Group 9 (1) Телец.png" alt="watch">
+    <h1>Ссылка на статью, для которой была сделана эта обложка <a href="https://pub.9111.ru/astrology/24876171-goroskop-dlya-teltsov-na-1-polugodie-2026-goda/">здесь</a></h1>
+  </div>
+ </div>
+  <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Group 11 Козерог.png" alt="watch">
+    <h1>Ссылка на статью, для которой была сделана эта обложка <a href="https://pub.9111.ru/astrology/24876192-goroskop-dlya-kozerogov-na-1-polugodie-2026-goda/">здесь</a></h1>
+  </div>
+ </div>
+   <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Group 15 Овен.png" alt="watch">
+    <h1>Ссылка на статью, для которой была сделана эта обложка <a href="https://pub.9111.ru/astrology/24876228-goroskop-dlya-ovnov-na-1-polugodie-2026-goda/">здесь</a></h1>
+  </div>
+ </div>
+    <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Group 12 Лев.png" alt="watch">
+    <h1>Ссылка на статью, для которой была сделана эта обложка <a href="https://pub.9111.ru/astrology/24876942-goroskop-dlya-lvov-na-1-polugodie-2026-goda/">здесь</a></h1>
+  </div>
+ </div>
+
+    <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Скорпион.png" alt="watch">
+    <h1>Обложка для статьи про годовой прогноз для тех, кто рождён под знаком Зодиака Скорпион</h1>
+  </div>
+ </div>
+    <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Огненные знаки.png" alt="watch">
+    <h1>Обложка для статьи про прогноз для тех, кто рождён под одним из огненных знаков Зодиака</h1>
+  </div>
+ </div>
+     <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Земные знаки.png" alt="watch">
+    <h1>Обложка для статьи про прогноз для тех, кто рождён под одним из земных знаков Зодиака</h1>
+  </div>
+ </div>
+
+    <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Водные знаки.png" alt="watch">
+    <h1>Обложка для статьи про прогноз для тех, кто рождён под одним из знаков Зодиака водной стихии</h1>
+  </div>
+ </div>
+
+   <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Воздушные знаки.png" alt="watch">
+    <h1>Обложка для статьи про прогноз для тех, кто рождён под одним из знаков Зодиака воздушной стихии</h1>
+  </div>
+ </div>
+
+  <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Лев на неделю.png" alt="watch">
+    <h1>Обложка для статьи про недельный прогноз для тех, кто рождён под знаковм Зодиака Лев</h1>
+  </div>
+ </div>
+
+   <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Стрелец на неделю.png" alt="watch">
+    <h1>Обложка для статьи про недельный прогноз для тех, кто рождён под знаковм Зодиака Стрелец</h1>
+  </div>
+ </div>
+
+    <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Козерог на неделю.png" alt="watch">
+    <h1>Обложка для статьи про недельный прогноз для тех, кто рождён под знаковм Зодиака Козерог</h1>
+  </div>
+ </div>
+
+    <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Телец на неделю.png" alt="watch">
+    <h1>Обложка для статьи про недельный прогноз для тех, кто рождён под знаковм Зодиака Телец</h1>
+  </div>
+ </div>
+
+    <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Близнецы на неделю.png" alt="watch">
+    <h1>Обложка для статьи про недельный прогноз для тех, кто рождён под знаковм Зодиака Близнецы</h1>
+  </div>
+ </div>
+
+     <div class="gallery-item  covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Рак на неделю.png" alt="watch">
+    <h1>Обложка для статьи про недельный прогноз для тех, кто рождён под знаковм Зодиака Рак</h1>
+  </div>
+ </div>
+
+     <div class="gallery-item  covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Дева на неделю.png" alt="watch">
+    <h1>Обложка для статьи про недельный прогноз для тех, кто рождён под знаковм Зодиака Дева</h1>
+  </div>
+ </div>
+
+      <div class="gallery-item  covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Весы на неделю.png" alt="watch">
+    <h1>Обложка для статьи про недельный прогноз для тех, кто рождён под знаковм Зодиака Весы</h1>
+  </div>
+ </div>
+
+       <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Скорпион на неделю.png" alt="watch">
+    <h1>Обложка для статьи про недельный прогноз для тех, кто рождён под знаковм Зодиака Скорпион</h1>
+  </div>
+ </div>
+
+    <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Рыбы на неделю.png" alt="watch">
+    <h1>Обложка для статьи про недельный прогноз для тех, кто рождён под знаковм Зодиака Рыбы</h1>
+  </div>
+ </div>
+
+   <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Group 13 Стрелец.png" alt="watch">
+    <h1>Ссылка на статью, для которой была сделана эта обложка <a href="https://pub.9111.ru/astrology/24877085-goroskop-dlya-streltsov-na-1-polugodie-2026-goda/">здесь</a></h1>
+  </div>
+ </div>
+ <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Обложки/Превью.png" alt="watch">
+    <h1>Превью для видео на Ютубе</h1>
+  </div>
+ </div>
+</div>
+ <div class="gallery-item gorr all">
+<div class="gallery-item-inner">
+<hr>
+</div>
+</div>
+
+   <!--Постеры -->
+   <div class="row">
+  <div class="gallery-item posters">
+  <div class="gallery-item-inner">
+    <img src="Постеры/Я твой.png" alt="headphone">
+  </div>
+ </div>
+
+   <div class="gallery-item posters">
+  <div class="gallery-item-inner">
+    <img src="Постеры/Приглашение на PC GAMING.png" alt="headphone">
+    <h1>Приглашение на PC GAMING</h1>
+  </div>
+ </div>
+  <div class="gallery-item posters">
+  <div class="gallery-item-inner">
+    <img src="Постеры/Приглашение на PC GAMING 2.png" alt="headphone">
+    <h1>Приглашение на PC GAMING</h1>
+  </div>
+ </div>
+<div class="gallery-item posters">
+   <div class="gallery-item-inner">
+     <img src="Постеры/Типографический постер.png" alt="headphone">
+     <h1>Типографический постер-переписка</h1>
+   </div>
+ </div>
+
+ <div class="gallery-item posters">
+  <div class="gallery-item-inner">
+    <img src="Постеры/Group 2902.png" alt="headphone">
+     <h1>Калькулятор подсчёта времени</h1>
+  </div>
+ </div>
+  <div class="gallery-item posters">
+  <div class="gallery-item-inner">
+    <img src="Постеры/Не бойся критики лучший вариант.png" alt="headphone">
+    <h1>Постер-приглашение на консультации к психологу</h1>
+  </div>
+ </div>
+
+  <div class="gallery-item posters">
+  <div class="gallery-item-inner">
+    <img src="Постеры/Опыт личных путешествий.png" alt="headphone">
+    <h1>Постер-коллаж с локациями, которые я посещала</h1>
+  </div>
+ </div>
+ 
+ <div class="gallery-item posters">
+  <div class="gallery-item-inner">
+    <img src="Постеры/Карточка товара в виде постера.png" alt="watch">
+     <h1>Постер с рекламой букета по скидке</h1>
+  </div>
+ </div>
+ <div class="gallery-item gor posters">
+  <div class="gallery-item-inner">
+    <img src="Постеры/баухаус-поиграть самый лучший вариант.png" alt="watch">
+    <h1>Постер-приглашение в игру "СуперСити"</h1>
+  </div>
+ </div>
+</div>
+ <div class="gallery-item gorr all">
+<div class="gallery-item-inner">
+<hr>
+</div>
+</div>
+    <!--Удаление и замена фона -->
+    <div class="row">
+  <div class="gallery-item delete-phone">
+  <div class="gallery-item-inner">
+    <img src="Открытки/С удалением фона до этого/В недоумении но с надеждой что так будет всегда.png" alt="headphone">
+    <h1>Интересная ситуация на Ессентукском озере</h1>
+  </div>
+ </div>
+ <div class="gallery-item delete-phone">
+  <div class="gallery-item-inner">
+    <img src="Открытки/С удалением фона до этого/Теплоход.png" alt="headphone">
+    <h1>Теплоход на Эльбрус</h1>
+  </div>
+ </div>
+  <div class="gallery-item delete-phone">
+  <div class="gallery-item-inner">
+    <img src="До После/Group 43.png" alt="headphone">
+    <h1>Полёт в космос</h1>
+  </div>
+ </div>
+<div class="gallery-item delete-phone">
+   <div class="gallery-item-inner">
+     <img src="Открытки/С удалением фона до этого/Около новогодней ёлки.png" alt="headphone">
+     <h1>Феликс из мультсериала "13 карт" любуется на ёлку</h1>
+   </div>
+ </div>
+
+ <div class="gallery-item gor delete-phone">
+  <div class="gallery-item-inner">
+    <img src="Открытки/С удалением фона до этого/Мама в заснеженном лесу.png" alt="headphone">
+    <h1>Моя мама на фоне зимней сказки</h1>
+  </div>
+ </div>
+  
+
+  <div class="gallery-item gor delete-phone">
+  <div class="gallery-item-inner">
+    <img src="Открытки/С удалением фона до этого/Мама на мосту.png" alt="headphone">
+    <h1>Моя мама на фоне красивого зимнего пейзажа</h1>
+  </div>
+ </div>
+
+ 
+ 
+ <div class="gallery-item gor delete-phone">
+  <div class="gallery-item-inner">
+    <img src="Открытки/С удалением фона до этого/Колдовство.png" alt="watch">
+  </div>
+ </div>
+
+  <div class="gallery-item gor delete-phone">
+  <div class="gallery-item-inner">
+    <img src="До После/Невмешалкино сантехническое.png" alt="watch">
+    <h1>Реакция, когда свет отключили</h1>
+  </div>
+ </div>
+
+ 
+ <div class="gallery-item gor delete-phone">
+  <div class="gallery-item-inner">
+    <img src="Открытки/С удалением фона до этого/Мама в красивом снежном лесу.png" alt="watch">
+    <h1>Моя мама на фоне зимнего леса</h1>
+  </div>
+ </div>
+</div>
+
+<div class="gallery-item gorr all">
+<div class="gallery-item-inner">
+<hr>
+</div>
+</div>
+  <!--Объявления -->
+  <div class="row">
+  <div class="gallery-item ads">
+  <div class="gallery-item-inner">
+    <img src="Объявления/Биоэнергетический массаж.png" alt="headphone">
+    <h1>Для привлечения клиентов массажисту</h1>
+  </div>
+ </div>
+<div class="gallery-item ads">
+   <div class="gallery-item-inner">
+     <img src="Объявления/Детский и подростковый психолог.png" alt="headphone">
+      <h1>Для привлечения клиентов психологу</h1>
+   </div>
+ </div>
+
+ <div class="gallery-item ads">
+  <div class="gallery-item-inner">
+    <img src="Объявления/Дизайнер.png" alt="headphone">
+    <h1>Для привлечения клиентов дизайнеру</h1>
+  </div>
+ </div>
+  <div class="gallery-item ads">
+  <div class="gallery-item-inner">
+    <img src="Объявления/Живите без боли.png" alt="headphone">
+    <h1>Для привлечения клиентов психосоматологу</h1>
+  </div>
+ </div>
+
+  <div class="gallery-item ads">
+  <div class="gallery-item-inner">
+    <img src="Объявления/Прогрессивный гипноз.png" alt="headphone">
+    <h1>Для привлечения клиентов психологу</h1>
+  </div>
+ </div>
+ 
+ <div class="gallery-item ads">
+  <div class="gallery-item-inner">
+    <img src="Объявления/Психолог.png" alt="watch">
+    <h1>Для привлечения клиентов психологу</h1>
+  </div>
+ </div>
+ <div class="gallery-item ads">
+  <div class="gallery-item-inner">
+    <img src="Объявления/Разберитесь в блоках родовой системы.png" alt="watch">
+    <h1>Для привлечения клиентов семейному расстановщику</h1>
+  </div>
+ </div>
+
+   <div class="gallery-item ads">
+  <div class="gallery-item-inner">
+    <img src="Объявления/Разбор ситуации на Таро.png" alt="headphone">
+    <h1>Для привлечения клиентов тарологу</h1>
+  </div>
+ </div>
+ 
+ <div class="gallery-item ads">
+  <div class="gallery-item-inner">
+    <img src="Объявления/Регрессивный гипноз.png" alt="watch">
+    <h1>Для привлечения клиентов психологу</h1>
+    
+  </div>
+ </div>
+    <div class="gallery-item ads">
+  <div class="gallery-item-inner">
+    <img src="Объявления/Создам сайт с компьютером.png" alt="watch">
+    <h1>Для привлечения клиентов создателю сайтов</h1>
+  </div>
+ </div>
+
+   <div class="gallery-item ads">
+  <div class="gallery-item-inner">
+    <img src="Объявления/Создам сайт.png" alt="headphone">
+    <h1>Для привлечения клиентов создателю сайтов</h1>
+  </div>
+ </div>
+ 
+ <div class="gallery-item ads">
+  <div class="gallery-item-inner">
+    <img src="Объявления/Таролог.png" alt="watch">
+    <h1>Для привлечения клиентов тарологу</h1>
+  </div>
+ </div>
+    <div class="gallery-item ads">
+  <div class="gallery-item-inner">
+    <img src="Объявления/Экстрасенс.png" alt="watch">
+    <h1>Для привлечения клиентов экстрасенсу</h1>
+  </div>
+ </div>
+</div>
+<div class="gallery-item gorr all">
+<div class="gallery-item-inner">
+<hr>
+</div>
+</div>
+   <!--Стикеры -->
+   <div class="row">
+ <div class="gallery-item stickers">
+  <div class="gallery-item-inner">
+    <img src="Стикеры/Поздравляю.png" alt="watch">
+    <h6>Стикер с поздравлением</h6>
+  </div>
+ </div>
+ <div class="gallery-item stickers">
+  <div class="gallery-item-inner">
+    <img src="Стикеры/Пойдём гулять.png" alt="watch">
+    <h6>Стикер с приглашением погулять</h6>
+  </div>
+ </div>
+ <div class="gallery-item stickers">
+  <div class="gallery-item-inner">
+    <img src="Стикеры/Ты о чём.png" alt="watch">
+    <h6>Стикер "Ты о чём"</h6>
+  </div>
+ </div>
+  <div class="gallery-item stickers">
+  <div class="gallery-item-inner">
+    <img src="Стикеры/На грани.png" alt="watch">
+    <h6>Стикер "Сейчас кто-то получит!"</h6>
+  </div>
+ </div>
+ <div class="gallery-item stickers">
+  <div class="gallery-item-inner">
+    <img src="Стикеры/Я в шоке.png" alt="watch">
+     <h6>Стикер "Я в шоке"</h6>
+  </div>
+ </div>
+ <div class="gallery-item stickers">
+  <div class="gallery-item-inner">
+    <img src="Стикеры/Есть вопросы.png" alt="watch">
+     <h6>Стикер "Есть вопросы"</h6>
+  </div>
+ </div>
+ <div class="gallery-item stickers">
+  <div class="gallery-item-inner">
+    <img src="Стикеры/Спасибо за помощь.png" alt="watch">
+    <h6>Стикер "Спасибо за помощь"</h6>
+  </div>
+ </div>
+
+  <div class="gallery-item stickers">
+  <div class="gallery-item-inner">
+    <img src="Стикеры/Решаю тест.png" alt="watch">
+    <h6>Стикер "Решаю тест"</h6>
+  </div>
+ </div>
+
+  <div class="gallery-item stickers">
+  <div class="gallery-item-inner">
+    <img src="Стикеры/Совсем забыл.png" alt="watch">
+    <h6>Стикер "Совсем забыл!"</h6>
+  </div>
+ </div>
+
+  <div class="gallery-item stickers">
+  <div class="gallery-item-inner">
+    <img src="Стикеры/Я уже еду.png" alt="watch">
+    <h6>Стикер "Я уже еду!"</h6>
+
+  </div>
+ </div>
+ </div>
+<div class="gallery-item gorr all">
+<div class="gallery-item-inner">
+<hr>
+</div>
+</div>
+  <!--Учебные проекты -->
+  <div class="row">
+ <div class="gallery-item gor educational-projects">
+  <div class="gallery-item-inner">
+    <img src="Учебные проекты/Для сайта/Screen1.png" alt="watch">
+     <h1>Первый экран сайта компании "Rustour"</h1>
+  </div>
+ </div>
+ <div class="gallery-item gor educational-projects">
+  <div class="gallery-item-inner">
+    <img src="Учебные проекты/Для сайта/Screen1 (2).png" alt="watch">
+    <h1>Первый экран сайта компании "JoDevelop"</h1>
+  </div>
+ </div>
+ <div class="gallery-item gor educational-projects">
+  <div class="gallery-item-inner">
+    <img src="Учебные проекты/Для сайта/Screen1 (1).png" alt="watch">
+    <h1>Первый экран сайта компании "Defender"</h1>
+  </div>
+ </div>
+  <div class="gallery-item gor educational-projects">
+  <div class="gallery-item-inner">
+    <img src="Учебные проекты/Для сайта/Frame 13.png" alt="watch">
+    <h1>Мудборд</h1>
+  </div>
+ </div>
+ <div class="gallery-item gor educational-projects">
+  <div class="gallery-item-inner">
+    <img src="Учебные проекты/Для сайта/Frame 5.png" alt="watch">
+    <h1>Пирамида потребностей Абрахама Маслоу</h1>
+  </div>
+ </div>
+  <div class="gallery-item gor educational-projects">
+  <div class="gallery-item-inner">
+    <img src="Учебные проекты/Для сайта/Frame 1 (2) мудборд.png" alt="watch">
+    <h1>Мудборд спальни</h1>
+  </div>
+ </div>
+ <div class="gallery-item gor educational-projects">
+  <div class="gallery-item-inner">
+    <img src="Учебные проекты/Для сайта/MacBook Pro 16_ - 2 (1).png" alt="watch">
+    <h1>Дизайн шрифта</h1>
+  </div>
+ </div>
+
+
+  <div class="gallery-item gor educational-projects">
+  <div class="gallery-item-inner">
+    <img src="Учебные проекты/Для сайта/Frame 1 (2).png" alt="watch">
+    <h1>Буква L в виде метабола</h1>
+  </div>
+ </div>
+
+  <div class="gallery-item gor educational-projects">
+  <div class="gallery-item-inner">
+    <img src="Учебные проекты/Для сайта/Frame 14 (1).png" alt="watch">
+    <h1>Проект с интересным эффектом у логотипа</h1>
+  </div>
+ </div>
+
+ <div class="gallery-item educational-projects">
+  <div class="gallery-item-inner">
+    <img src="Учебные проекты/Для сайта/Instagram post - 6 (1) Юдаев.png" alt="headphone">
+    <h1>Обложка сборника работ, сделанных в рамках бесплатного курса</h1>
+  </div>
+ </div>
+ 
+  <div class="gallery-item gor educational-projects">
+  <div class="gallery-item-inner">
+    <img src="Учебные проекты/Парфюмерия.png" alt="headphone">
+<h1>Первый экран сайта парфюмерии</h1>
+  </div>
+ </div>
+<div class="gallery-item gor educational-projects">
+   <div class="gallery-item-inner">
+     <img src="Учебные проекты/Первый экран фитнес-клуба.png" alt="headphone">
+     <h1>Первый экран сайта фитнес-клуба</h1>
+   </div>
+ </div>
+
+ <div class="gallery-item gor educational-projects">
+  <div class="gallery-item-inner">
+    <img src="Учебные проекты/Фен Whoosh.png" alt="headphone">
+    <h1>Первый экран сайта с рекламой фена</h1>
+  </div>
+ </div>
+  <div class="gallery-item gor educational-projects">
+  <div class="gallery-item-inner">
+    <img src="Учебные проекты/Про дроны.png" alt="headphone">
+    <h1>Первый экран сайта с продажей дронов</h1>
+  </div>
+ </div>
+  <div class="gallery-item educational-projects">
+  <div class="gallery-item-inner">
+    <img src="Учебные проекты/Для сайта/Instagram post - 7 (1) Юдаев.png" alt="headphone">
+    <h1>Обложка сборника работ, сделанных в рамках бесплатного курса</h1>
+  </div>
+ </div>
+
+  <div class="gallery-item educational-projects">
+  <div class="gallery-item-inner">
+    <img src="Учебные проекты/Для сайта/Group 11 (1).png" alt="watch">
+    <h1>Коллаж с картами банков</h1>
+  </div>
+  </div> 
+  <div class="gallery-item educational-projects">
+  <div class="gallery-item-inner">
+    <img src="Учебные проекты/So cute relax.png" alt="watch">
+    <h1>So cute relax</h1>
+  </div>
+ </div>
+  <div class="gallery-item gor educational-projects">
+  <div class="gallery-item-inner">
+    <img src="Учебные проекты/Group 3 (5).png" alt="headphone">
+    <h1>Первый экран сайта с NFT</h1>
+  </div>
+ </div>
+
+  <div class="gallery-item gor educational-projects">
+  <div class="gallery-item-inner">
+    <img src="Учебные проекты/Для сайта/MacBook Pro 16_ - 3 Юдаев.png" alt="headphone">
+    <h1>Первый экран сайта с маслами очистки</h1>
+  </div>
+ </div>
+  <div class="gallery-item gor educational-projects">
+  <div class="gallery-item-inner">
+    <img src="Учебные проекты/Samsung 2 первый экран.png" alt="headphone">
+    <h1>Первый экран сайта с рекламой наушников</h1>
+  </div>
+ </div>
+
+   <div class="gallery-item gor educational-projects">
+  <div class="gallery-item-inner">
+    <img src="Учебные проекты/Первый экран сайта бургерной.png" alt="headphone">
+    <h1>Первый экран сайта бургерной</h1>
+  </div>
+ </div>
+
+  <div class="gallery-item gor educational-projects">
+  <div class="gallery-item-inner">
+    <img src="Учебные проекты/Vision Pro с водяным знаком.png" alt="headphone">
+    <h1>Первый экран сайта с рекламой очков виртуальной реальности "Vision Pro"</h1>
+  </div>
+ </div>
+
+   <div class="gallery-item gor educational-projects">
+  <div class="gallery-item-inner">
+    <img src="Учебные проекты/1 'экран NIKE.png" alt="headphone">
+    <h1>Первый экран сайта с рекламой кроссовок Nike</h1>
+  </div>
+ </div>
+</div>
+
+
+ </div>
+ <!--9th gallery item start -->
+ <!--8th gallery item end -->
+ <!--4th gallery item start -->
+</section>
+<script src="sweetalert2.all.min.js"></script>
+    <script>
+
+        Swal.fire({
+  title: 'Добро пожаловать!',
+  text: 'Вы попали на сайт, на котором представлено портфолио работ Анастасии Алексеевны Лобовой(которая, кстати является и автором этого сайта, тоже). Портфолио представлено в виде категорий. Чтобы перемещаться по категориям - вам нужно кликнуть на ту, которая вас заинтересовала. Например, если хотите подробнее ознакомиться с календарями, вам нужно кликнуть на категорию под названием "Календари". Если вы захотели себе работу с таким же классным дизайном, то переходите по этой ссылке: https://anlian13.github.io/page_main/',
+  // imageUrl: 'Жук.jpg',
+  imageWidth: 400,
+  imageHeight: 200,
+  imageAlt: 'Custom image',
+})
+ const filterContainer = document.querySelector(".gallery-filter");
+ const galleryItems = document.querySelectorAll(".gallery-item");
+
+
+ 
+ filterContainer.addEventListener("click", (event) =>{
+   if(event.target.classList.contains("filter-item")){
+
+     // deactivate existing active 'filter-item'
+    filterContainer.querySelector(".active").classList.remove("active");
+
+     // activate new 'filter-item'
+    event.target.classList.add("active");
+
+    const filterValue = event.target.getAttribute("data-filter");
+
+    galleryItems.forEach((item) =>{
+
+       if(item.classList.contains(filterValue) || filterValue === 'all'){
+        item.classList.remove("hide");
+         item.classList.add("show");
+       }
+
+       else{
+        item.classList.remove("show");
+        item.classList.add("hide");
+       }
+
+     });
+
+   }
+ });
+    </script>
+</body>
+</html>
