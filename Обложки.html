@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обложки</title>
+    <link rel="stylesheet" href="sweetalert2.min.css">
+</head>
+<style>
+
+    body{
+    line-height: 1.5;
+    font-family: sans-serif;
+}
+*{
+    margin:0;
+    box-sizing: border-box;
+    user-select: none;
+}    
+
+
+h1 {
+  color: #ffffff;
+  padding: 0, 5px;
+  text-align: center;
+}
+
+h2 {
+  color: #ffffff;
+  text-align: center;
+}
+
+h6 {
+  color: #ffffff;
+  text-align: center;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+img{
+    max-width: 100%;
+    vertical-align: middle;
+     user-select: none;
+}
+.gallery{
+   width: 100%;
+   display: block;
+   min-height: 100vh;
+   background-color: #2a2932;
+   padding: 100px 0;
+}
+
+.container{
+    max-width: 1170px;
+    margin:auto;
+}
+
+.gallery .gallery-filter{
+  
+   width: 100%;
+   text-align: center;
+   margin-bottom: 40px;
+}
+.gallery .gallery-filter .filter-item{
+   color: #ffffff;
+   font-size: 17px;
+   border: 2px solid white;
+   text-transform: uppercase;
+   display: inline-block;
+   border-radius: 20px;
+   margin-right: 8px;
+   cursor: pointer;
+   padding: 8px 20px 8px 20px;
+   line-height: 1.2;
+   transition: all 0.3s ease;
+   margin: 16px;
+}
+
+.gallery-item.name.calendar {
+      color: #ffffff;
+   font-size: 17px;
+   border: 2px solid white;
+   text-transform: uppercase;
+   display: inline-block;
+   border-radius: 20px;
+   margin-right: 8px;
+   cursor: pointer;
+   padding: 8px 20px 8px 20px;
+   line-height: 1.2;
+   transition: all 0.3s ease;
+   margin: 16px;
+}
+
+
+
+.gallery .gallery-filter .filter-item.active{
+  color: white;
+  border-color : #16b5ef;
+  background: #16b5ef;
+}
+
+.gallery .gallery-item{
+    width: calc(100% / 3);
+    padding: 15px;
+
+}
+
+
+.gallery-item.coloda.show {
+    width: calc(100% / 2);
+    padding: 15px;
+}
+
+.gallery-item.cards.show {
+    width: calc(100% / 2);
+    padding: 15px;
+}
+
+.gallery-item.stickers.show {
+    width: calc(100% / 4);
+    padding: 15px;
+}
+
+.gallery-item.gor {
+   width: calc(100% / 2);
+    padding: 15px;
+}
+
+.gallery-item.gorr {
+    width: 100%;
+    padding: 15px;
+}
+
+.gallery-item.calendar.show {
+    width: calc(100% / 2);
+    padding: 15px;
+}
+
+
+.gallery-item.imgg {
+    width: calc(100% / 2);
+    padding: 15px;
+
+}
+.gallery .gallery-item-inner img{
+    width: 100%;
+  border: 3px solid #d4dad9;
+}
+
+.gallery .gallery-item.show{
+    animation: fadeIn 0.5s ease;
+}
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.gallery .gallery-item.hide{
+    display: none;
+}
+
+@media(max-width: 491px){
+    .gallery .gallery-item{
+        width: 50%;
+    }
+}
+@media(max-width: 667px){
+    .gallery .gallery-item{
+        width: 100%;
+    }
+    .gallery .gallery-filter .filter-item{
+        margin-bottom: 10px;
+    }
+}
+.index {
+margin: 40px;
+text-align: center;
+
+}
+
+hr {
+  border: none;
+  border-top: 3px double #ffffff;
+  color: #ffffff;
+  /* overflow: visible; */
+  text-align: center;
+  height: 5px;
+}
+
+ .board.all {
+       
+        background-color: #4500d1;
+        border: 5px solid slategray;
+        border-radius: 10px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 20px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+</style>
+<body>
+
+  
+    <section class="gallery">
+    <div class="container">
+      <h1 class="index">Портфолио работ Анастасии Алексеевны Лобовой</h1>
+
+
+    <div class="gallery-filter">
+   <span class="filter-item" data-filter="all"><a href="index.html">Главная страница</a></span>
+   <span class="filter-item" data-filter="business-cards"><a href="Визитки.html">Визитки</a></span>
+   <span class="filter-item" data-filter="infographics"><a href="Инфографика.html">Инфографика</a></span>
+   <span class="filter-item" data-filter="calendar"><a href="Календари.html">Календари</a></span>
+   <span class="filter-item" data-filter="collage"><a href="Коллажи.html">Коллажи</a></span>
+   <span class="filter-item" data-filter="cards"><a href="Карточки.html">Карточки товаров</a></span>
+   <span class="filter-item" data-filter="coloda"><a href="Таро13.html">Колода Таро с персонажами из мультсериала "13 карт"</a></span>
+   <span class="filter-item active" data-filter="covers"><a href="Обложки.html">Обложки</a></span>
+   <span class="filter-item" data-filter="ads"><a href="Объявления.html">Объявления</a></span>
+   <span class="filter-item" data-filter="postcards"><a href="Открытки.html">Открытки</a></span>
+   <span class="filter-item" data-filter="posters"><a href="Постеры.html">Постеры</a></span>
+   <span class="filter-item" data-filter="print"><a href="Принты.html">Принты на одежду и сувениры</a></span>
+   <span class="filter-item" data-filter="invitations"><a href="Приглашения.html">Приглашения</a></span>
+   <span class="filter-item" data-filter="redesign"><a href="Редизайн.html">Редизайн</a></span>
+   <span class="filter-item" data-filter="lesson-schedules"><a href="Расписание.html">Расписания уроков</a></span>
+   <span class="filter-item" data-filter="stickers"><a href="Стикеры.html">Стикеры</a></span>
+   <span class="filter-item" data-filter="delete-phone"><a href="Фон.html">Удаление и замена фона</a></span>
+   <span class="filter-item" data-filter="educational-projects"><a href="Учёба.html">Учебные проекты</a></span>
+    
+ </div>
+
+  <div class="row">
+  <div class="gallery-item covers">
+  <div class="gallery-item-inner">
+    <img src="Обложки/Обложка для книги Игры демонов.png" alt="headphone">
+    <h1>Обложка для книги "Игры демонов"</h1>
+  </div>
+ </div>
+<div class="gallery-item covers">
+   <div class="gallery-item-inner">
+     <img src="Обложки/A5 - 2.png" alt="headphone">
+     <h1>Макет обложки для тетради с персонажем из мультсериала "13 карт" по имени Зонтик</h1>
+   </div>
+ </div>
+
+ <div class="gallery-item covers">
+  <div class="gallery-item-inner">
+    <img src="Обложки/A5 - 15.png" alt="headphone">
+    <h1>Макет обложки для тетради с персонажем из мультсериала "13 карт" по имени Вару</h1>
+  </div>
+ </div>
+  <div class="gallery-item covers">
+  <div class="gallery-item-inner">
+    <img src="Обложки/IMG_20240729_151809_407 обложка для ежедневника.jpg" alt="headphone">
+    <h1>Макет обложки для ежедневника с персонажами из мультсериала "13 карт"</h1>
+  </div>
+ </div>
+
+  <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Обложки/IMG_20240221_100818_980 обложка для тетради.jpg" alt="headphone">
+    <h1>Макет обложки для тетради</h1>
+  </div>
+ </div>
+ 
+ <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Обложки/Обложка для группы Вк.png" alt="watch">
+    <h1>Обложка для группы в Вк</h1>
+  </div>
+ </div>
+ <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Обложки/Обложка для телеграм канала.png" alt="watch">
+    <h1>Обложка для Телеграм-канала</h1>
+  </div>
+ </div>
+
+   <div class="gallery-item covers">
+  <div class="gallery-item-inner">
+    <img src="Обложки/Обложка для курса по поиску работы (1).png" alt="headphone">
+     <h1>Обложка для курса по поиску работы</h1>
+  </div>
+ </div>
+ 
+ <div class="gallery-item covers">
+  <div class="gallery-item-inner">
+    <img src="Обложки/Обложка для канала про отзывы.png" alt="watch">
+    <h1>Обложка для Телеграм-канала про отзывы</h1>
+  </div>
+ </div>
+    <div class="gallery-item covers">
+  <div class="gallery-item-inner">
+    <img src="Обложки/Обложка для курса по мемологии.png" alt="watch">
+    <h1>Обложка для курса по мемологии</h1>
+  </div>
+ </div>
+
+    <div class="gallery-item covers">
+  <div class="gallery-item-inner">
+    <img src="Обложки/В гостях у Адимовича.png" alt="watch">
+    <h1>Ссылка на статью, для которой была сделана эта обложка <a href="https://pub.9111.ru/society/23828073-13-kart-i-adimovich-1-chast/">здесь</a></h1>
+  </div>
+ </div>
+ 
+    <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Обложки/Group 19 про цирковое представление.png" alt="watch">
+    <h1>Ссылка на статью, для которой была сделана эта обложка <a href="https://pub.9111.ru/travel/24276233-neobichnoe-predstavlenie-v-kislovodskom-tsirke-na-kotoroe-popali-personazhi-13-kart/">здесь</a></h1>
+  </div>
+ </div>
+  <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Обложки/Успешная защита диплома.png" alt="watch">
+    <h1>Ссылка на статью, для которой была сделана эта обложка <a href="https://pub.9111.ru/education/24257942-tematika-moih-statey-v-blizhayshem-budushchem/">здесь</a></h1>
+  </div>
+ </div>
+ <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Обложки/Сбой в телепортации.png" alt="watch">
+    <h1>Ссылка на статью, для которой была сделана эта обложка <a href="https://pub.9111.ru/travel/24263534-chto-sluchilos-s-personazhami-13-kart-na-pyatom-sezde-praviteley/">здесь</a></h1>
+  </div>
+ </div>
+ <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Обложки/Разговор с королём мечей Пиком.png" alt="watch">
+    <h1>Ссылка на статью, для которой была сделана эта обложка <a href="https://pub.9111.ru/travel/24304869-kto-pozvonil-piku-posle-neobichnogo-predstavleniya-kotoroe-proshlo-v-kislovodskom-tsirke/">здесь</a></h1>
+  </div>
+ </div>
+  <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Обложки/Карточные прячутся среди толпы.png" alt="watch">
+    <h1>Ссылка на статью, для которой была сделана эта обложка <a href="https://pub.9111.ru/travel/24265904-kak-personazhi-13-kart-okazalis-v-kislovodskom-tsirke/">здесь</a></h1>
+  </div>
+ </div>
+ <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Group 9 (1) Телец.png" alt="watch">
+    <h1>Ссылка на статью, для которой была сделана эта обложка <a href="https://pub.9111.ru/astrology/24876171-goroskop-dlya-teltsov-na-1-polugodie-2026-goda/">здесь</a></h1>
+  </div>
+ </div>
+  <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Group 11 Козерог.png" alt="watch">
+    <h1>Ссылка на статью, для которой была сделана эта обложка <a href="https://pub.9111.ru/astrology/24876192-goroskop-dlya-kozerogov-na-1-polugodie-2026-goda/">здесь</a></h1>
+  </div>
+ </div>
+   <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Group 15 Овен.png" alt="watch">
+    <h1>Ссылка на статью, для которой была сделана эта обложка <a href="https://pub.9111.ru/astrology/24876228-goroskop-dlya-ovnov-na-1-polugodie-2026-goda/">здесь</a></h1>
+  </div>
+ </div>
+    <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Group 12 Лев.png" alt="watch">
+    <h1>Ссылка на статью, для которой была сделана эта обложка <a href="https://pub.9111.ru/astrology/24876942-goroskop-dlya-lvov-na-1-polugodie-2026-goda/">здесь</a></h1>
+  </div>
+ </div>
+
+    <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Скорпион.png" alt="watch">
+    <h1>Обложка для статьи про годовой прогноз для тех, кто рождён под знаком Зодиака Скорпион</h1>
+  </div>
+ </div>
+    <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Огненные знаки.png" alt="watch">
+    <h1>Обложка для статьи про прогноз для тех, кто рождён под одним из огненных знаков Зодиака</h1>
+  </div>
+ </div>
+     <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Земные знаки.png" alt="watch">
+    <h1>Обложка для статьи про прогноз для тех, кто рождён под одним из земных знаков Зодиака</h1>
+  </div>
+ </div>
+
+    <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Водные знаки.png" alt="watch">
+    <h1>Обложка для статьи про прогноз для тех, кто рождён под одним из знаков Зодиака водной стихии</h1>
+  </div>
+ </div>
+
+   <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Воздушные знаки.png" alt="watch">
+    <h1>Обложка для статьи про прогноз для тех, кто рождён под одним из знаков Зодиака воздушной стихии</h1>
+  </div>
+ </div>
+
+  <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Лев на неделю.png" alt="watch">
+    <h1>Обложка для статьи про недельный прогноз для тех, кто рождён под знаковм Зодиака Лев</h1>
+  </div>
+ </div>
+
+   <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Стрелец на неделю.png" alt="watch">
+    <h1>Обложка для статьи про недельный прогноз для тех, кто рождён под знаковм Зодиака Стрелец</h1>
+  </div>
+ </div>
+
+    <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Козерог на неделю.png" alt="watch">
+    <h1>Обложка для статьи про недельный прогноз для тех, кто рождён под знаковм Зодиака Козерог</h1>
+  </div>
+ </div>
+
+    <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Телец на неделю.png" alt="watch">
+    <h1>Обложка для статьи про недельный прогноз для тех, кто рождён под знаковм Зодиака Телец</h1>
+  </div>
+ </div>
+
+    <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Близнецы на неделю.png" alt="watch">
+    <h1>Обложка для статьи про недельный прогноз для тех, кто рождён под знаковм Зодиака Близнецы</h1>
+  </div>
+ </div>
+
+     <div class="gallery-item  covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Рак на неделю.png" alt="watch">
+    <h1>Обложка для статьи про недельный прогноз для тех, кто рождён под знаковм Зодиака Рак</h1>
+  </div>
+ </div>
+
+     <div class="gallery-item  covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Дева на неделю.png" alt="watch">
+    <h1>Обложка для статьи про недельный прогноз для тех, кто рождён под знаковм Зодиака Дева</h1>
+  </div>
+ </div>
+
+      <div class="gallery-item  covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Весы на неделю.png" alt="watch">
+    <h1>Обложка для статьи про недельный прогноз для тех, кто рождён под знаковм Зодиака Весы</h1>
+  </div>
+ </div>
+
+       <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Скорпион на неделю.png" alt="watch">
+    <h1>Обложка для статьи про недельный прогноз для тех, кто рождён под знаковм Зодиака Скорпион</h1>
+  </div>
+ </div>
+
+    <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Рыбы на неделю.png" alt="watch">
+    <h1>Обложка для статьи про недельный прогноз для тех, кто рождён под знаковм Зодиака Рыбы</h1>
+  </div>
+ </div>
+
+   <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Для статей/Group 13 Стрелец.png" alt="watch">
+    <h1>Ссылка на статью, для которой была сделана эта обложка <a href="https://pub.9111.ru/astrology/24877085-goroskop-dlya-streltsov-na-1-polugodie-2026-goda/">здесь</a></h1>
+  </div>
+ </div>
+ <div class="gallery-item gor covers">
+  <div class="gallery-item-inner">
+    <img src="Обложки/Превью.png" alt="watch">
+    <h1>Превью для видео на Ютубе</h1>
+  </div>
+ </div>
+</div>
+</section>
+<script src="sweetalert2.all.min.js"></script>
+    <script>
+
+       
+ const filterContainer = document.querySelector(".gallery-filter");
+ const galleryItems = document.querySelectorAll(".gallery-item");
+
+
+ 
+ filterContainer.addEventListener("click", (event) =>{
+   if(event.target.classList.contains("filter-item")){
+
+     // deactivate existing active 'filter-item'
+    filterContainer.querySelector(".active").classList.remove("active");
+
+     // activate new 'filter-item'
+    event.target.classList.add("active");
+
+    const filterValue = event.target.getAttribute("data-filter");
+
+    galleryItems.forEach((item) =>{
+
+       if(item.classList.contains(filterValue) || filterValue === 'all'){
+        item.classList.remove("hide");
+         item.classList.add("show");
+       }
+
+       else{
+        item.classList.remove("show");
+        item.classList.add("hide");
+       }
+
+     });
+
+   }
+ });
+    </script>
+</body>
+</html>
