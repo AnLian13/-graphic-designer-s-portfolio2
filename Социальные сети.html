@@ -1,0 +1,320 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Раскраски</title>
+    <link rel="stylesheet" href="sweetalert2.min.css">
+</head>
+<style>
+
+    body{
+    line-height: 1.5;
+    font-family: sans-serif;
+}
+*{
+    margin:0;
+    box-sizing: border-box;
+    user-select: none;
+}    
+
+
+h1 {
+  color: #ffffff;
+  padding: 0, 5px;
+  text-align: center;
+}
+
+h2 {
+  color: #ffffff;
+  text-align: center;
+}
+
+h6 {
+  color: #ffffff;
+  text-align: center;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+img{
+    max-width: 100%;
+    vertical-align: middle;
+     user-select: none;
+}
+.gallery{
+   width: 100%;
+   display: block;
+   min-height: 100vh;
+   background-color: #2a2932;
+   padding: 100px 0;
+}
+
+.container{
+    max-width: 1170px;
+    margin:auto;
+}
+
+.gallery .gallery-filter{
+  
+   width: 100%;
+   text-align: center;
+   margin-bottom: 40px;
+}
+.gallery .gallery-filter .filter-item{
+   color: #ffffff;
+   font-size: 17px;
+   border: 2px solid white;
+   text-transform: uppercase;
+   display: inline-block;
+   border-radius: 20px;
+   margin-right: 8px;
+   cursor: pointer;
+   padding: 8px 20px 8px 20px;
+   line-height: 1.2;
+   transition: all 0.3s ease;
+   margin: 16px;
+}
+
+.gallery-item.name.calendar {
+      color: #ffffff;
+   font-size: 17px;
+   border: 2px solid white;
+   text-transform: uppercase;
+   display: inline-block;
+   border-radius: 20px;
+   margin-right: 8px;
+   cursor: pointer;
+   padding: 8px 20px 8px 20px;
+   line-height: 1.2;
+   transition: all 0.3s ease;
+   margin: 16px;
+}
+
+
+
+.gallery .gallery-filter .filter-item.active{
+  color: white;
+  border-color : #16b5ef;
+  background: #16b5ef;
+}
+
+.gallery .gallery-item{
+    width: calc(100% / 3);
+    padding: 15px;
+
+}
+
+
+.gallery-item.coloda.show {
+    width: calc(100% / 2);
+    padding: 15px;
+}
+
+.gallery-item.cards.show {
+    width: calc(100% / 2);
+    padding: 15px;
+}
+
+.gallery-item.stickers.show {
+    width: calc(100% / 4);
+    padding: 15px;
+}
+
+.gallery-item.gor {
+   width: calc(100% / 2);
+    padding: 15px;
+}
+
+.gallery-item.gorr {
+    width: 100%;
+    padding: 15px;
+}
+
+.gallery-item.calendar.show {
+    width: calc(100% / 2);
+    padding: 15px;
+}
+
+
+.gallery-item.imgg {
+    width: calc(100% / 2);
+    padding: 15px;
+
+}
+.gallery .gallery-item-inner img{
+    width: 100%;
+  border: 3px solid #d4dad9;
+}
+
+.gallery .gallery-item.show{
+    animation: fadeIn 0.5s ease;
+}
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.gallery .gallery-item.hide{
+    display: none;
+}
+
+@media(max-width: 491px){
+    .gallery .gallery-item{
+        width: 50%;
+    }
+}
+@media(max-width: 667px){
+    .gallery .gallery-item{
+        width: 100%;
+    }
+    .gallery .gallery-filter .filter-item{
+        margin-bottom: 10px;
+    }
+}
+.index {
+margin: 40px;
+text-align: center;
+
+}
+
+hr {
+  border: none;
+  border-top: 3px double #ffffff;
+  color: #ffffff;
+  /* overflow: visible; */
+  text-align: center;
+  height: 5px;
+}
+
+ .board.all {
+       
+        background-color: #4500d1;
+        border: 5px solid slategray;
+        border-radius: 10px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 20px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+</style>
+<body>
+
+  
+    <section class="gallery">
+    <div class="container">
+      <h1 class="index">Портфолио работ Анастасии Алексеевны Лобовой</h1>
+
+
+    <div class="gallery-filter">
+   <span class="filter-item" data-filter="all"><a href="index.html">Главная страница</a></span>
+   <span class="filter-item" data-filter="business-cards"><a href="Визитки.html">Визитки</a></span>
+   <span class="filter-item" data-filter="gides"><a href="Гайды-и-подложки.html">Гайды и подложки</a></span>
+   <span class="filter-item active" data-filter="social-media"><a href="Социальные сети.html">Для социальных сетей</a></span>
+   <span class="filter-item" data-filter="infographics"><a href="Инфографика.html">Инфографика</a></span>
+   <span class="filter-item" data-filter="calendar"><a href="Календари.html">Календари</a></span>
+   <span class="filter-item" data-filter="collage"><a href="Коллажи.html">Коллажи</a></span>
+   <span class="filter-item" data-filter="cards"><a href="Карточки.html">Карточки товаров</a></span>
+   <span class="filter-item" data-filter="coloda"><a href="Таро13.html">Колода Таро с персонажами из мультсериала "13 карт"</a></span>
+   <span class="filter-item" data-filter="covers"><a href="Обложки.html">Обложки</a></span>
+   <span class="filter-item" data-filter="ads"><a href="Объявления.html">Объявления</a></span>
+   <span class="filter-item" data-filter="postcards"><a href="Открытки.html">Открытки</a></span>
+   <span class="filter-item" data-filter="posters"><a href="Постеры.html">Постеры</a></span>
+   <span class="filter-item" data-filter="print"><a href="Принты.html">Принты на одежду и сувениры</a></span>
+   <span class="filter-item" data-filter="invitations"><a href="Приглашения.html">Приглашения</a></span>
+   <span class="filter-item" data-filter="redesign"><a href="Редизайн.html">Редизайн</a></span>
+   <span class="filter-item" data-filter="Coloring-pages"><a href="Раскраски.html">Раскраски</a></span>
+   <span class="filter-item" data-filter="lesson-schedules"><a href="Расписание.html">Расписания уроков</a></span>
+   <span class="filter-item" data-filter="stickers"><a href="Стикеры.html">Стикеры</a></span>
+   <span class="filter-item" data-filter="certificates"><a href="Сертификаты.html">Сертификаты</a></span>
+   <span class="filter-item" data-filter="delete-phone"><a href="Фон.html">Удаление и замена фона</a></span>
+   <span class="filter-item" data-filter="educational-projects"><a href="Учёба.html">Учебные проекты</a></span>
+    
+ </div>
+       
+         
+         <!--Визитки -->
+              <div class="row">
+ <div class="gallery-item gor social-media">
+  <div class="gallery-item-inner">
+    <img src="Сториз/Сторис.jpg" alt="camera">
+    <h1>Сторис для приглашения на консультацию к тарологу</h1>
+  </div>
+ </div>
+
+<!--5th gallery item start -->
+ <div class="gallery-item gor social-media">
+   <div class="gallery-item-inner">
+     <img src="Сториз/Сторис другой вариант.jpg" alt="camera">
+     <h1>Сторис для приглашения на консультацию к тарологу</h1>
+   </div>
+ </div>
+</div>
+
+ <div class="row">
+ <div class="gallery-item gor social-media">
+  <div class="gallery-item-inner">
+    <img src="Сториз/Сторис.jpg" alt="camera">
+    <h1>Баннер для приглашения на консультацию к психологу</h1>
+  </div>
+ </div>
+
+<!--5th gallery item start -->
+ 
+<div class="gallery-item gorr all">
+<div class="gallery-item-inner">
+<hr>
+</div>
+</div>
+<!-- <h1>Узнать подробнее, как использовать гайды и подложки, чтобы улучшить своё здоровье можно <a href="https://www.b17.ru/assenatas/">здесь</a></h1>
+
+  <div class="gallery-item gor price-list">
+  <div class="gallery-item-inner">
+    <img src="Прайс-листы/Услуги психолога.jpg" alt="camera">
+    <h1>Прайс-лист с ценами на услуги психолога</h1>
+  </div>
+ </div> -->
+ </section>
+<script src="sweetalert2.all.min.js"></script>
+    <script>
+
+ const filterContainer = document.querySelector(".gallery-filter");
+ const galleryItems = document.querySelectorAll(".gallery-item");
+
+
+ 
+ filterContainer.addEventListener("click", (event) =>{
+   if(event.target.classList.contains("filter-item")){
+
+     // deactivate existing active 'filter-item'
+    filterContainer.querySelector(".active").classList.remove("active");
+
+     // activate new 'filter-item'
+    event.target.classList.add("active");
+
+    const filterValue = event.target.getAttribute("data-filter");
+
+    galleryItems.forEach((item) =>{
+       if(item.classList.contains(filterValue) || filterValue === 'all'){
+        item.classList.remove("hide");
+         item.classList.add("show");
+       }
+       else{
+        item.classList.remove("show");
+        item.classList.add("hide");
+       }
+     });
+   }
+ });
+    </script>
+    </body>
+</html>
